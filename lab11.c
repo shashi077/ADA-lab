@@ -2,14 +2,12 @@
 
 
 #include<stdio.h>
-#include<conio.h>
 int s[10] , x[10],d ;
 void sumofsub ( int , int , int ) ;
 void main ()
 {
 int n , sum = 0 ;
 int i ;
-clrscr () ;
 printf ( " \n Enter the size of the set : " ) ;
 scanf ( "%d" , &n ) ;
 printf ( " \n Enter the set in increasing order:\n" ) ;
@@ -23,7 +21,6 @@ if ( sum < d || s[1] > d )
 printf ( " \n No subset possible : " ) ;
 else
 sumofsub ( 0 , 1 , sum ) ;
-getch () ;
 }
 void sumofsub ( int m , int k , int r )
 {
