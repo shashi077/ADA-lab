@@ -1,4 +1,6 @@
-echo " enter the no  page "
+echo "eneter the no of pages "
+read n
+echo " enter the  page no "
 for ((i=1;i<=n;i++))
 do
         read a[$i];
@@ -7,7 +9,7 @@ echo " enter the no frames "
 read s
 for ((i=0;i<s;i++))
 do
-        frame[i]= -1;
+        frame[$i]= -1;
         j=0;
         echo " ref string \t page frames \n "
 done
@@ -18,15 +20,16 @@ do
 done
 for ((k=0;k<s;k++))
 do
- if [frame[k]==a[i]]
+ if [[ frame[$k] -eq "${a[i]}" ]]
  then
  avail=1;
  fi
- if [avail==0]
+ if [ "$avail" -eq 0 ]
  then
  frame[j]=a[i];
- j=(j+1)%s;                                                                                                                                                              count++;
-
+ ((j++))
+ let j=j%s
+ ((count++))
  for ((k=0;k<s;k++))
  do
  echo " frame"                                                          
